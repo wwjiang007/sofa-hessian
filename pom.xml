@@ -48,6 +48,7 @@
     <properties>
         <skipTests>false</skipTests>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.test.jvmargs></maven.test.jvmargs>
     </properties>
 
     <dependencies>
@@ -149,6 +150,7 @@
                         <include>**/*.java</include>
                     </includes>
                     <forkMode>once</forkMode>
+                    <argLine>${maven.test.jvmargs}</argLine>
                 </configuration>
             </plugin>
             <plugin>
