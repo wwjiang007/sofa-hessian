@@ -18,7 +18,11 @@ package com.caucho.hessian.test;
 
 import com.alipay.hessian.generic.model.GenericObject;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
 
 /**
  * The test service is a Hessian 2.0 protocol test for developers of
@@ -685,7 +689,7 @@ public class SimpleDataGenerator implements DataGenerator {
     }
 
     public Object generateObject_3() {
-        TestCons cons = new TestCons();
+        SimpleTestCons cons = new SimpleTestCons();
 
         cons.setFirst("a");
         cons.setRest(cons);
@@ -694,7 +698,7 @@ public class SimpleDataGenerator implements DataGenerator {
     }
 
     public Object generateGenericObject_3() {
-        GenericObject gobj = new GenericObject(TestCons.class.getName());
+        GenericObject gobj = new GenericObject(SimpleTestCons.class.getName());
         gobj.putField("_first", "a");
         gobj.putField("_rest", gobj);
         return gobj;
